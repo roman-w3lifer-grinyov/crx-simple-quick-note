@@ -27,7 +27,6 @@ window.addEventListener('DOMContentLoaded', function () {
         ext._setLength();
         setBadge(ext.textarea.value);
       });
-
     },
 
     updateNote: function () {
