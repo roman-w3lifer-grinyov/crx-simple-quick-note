@@ -11,5 +11,4 @@ function setBadge(note) {
   chrome.browserAction.setBadgeText({
     'text': note.length ? String(note.length) : ''
   });
-  chrome.browserAction.setBadgeBackgroundColor({'color': '#fc2323'});
 }
