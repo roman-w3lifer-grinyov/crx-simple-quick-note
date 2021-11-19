@@ -4,6 +4,7 @@
 
 chrome.runtime.onInstalled.addListener(onInstalledAndOnStartupListener);
 chrome.runtime.onStartup.addListener(onInstalledAndOnStartupListener);
+chrome.tabs.onUpdated.addListener(() => onInstalledAndOnStartupListener);
 
 function onInstalledAndOnStartupListener()
 {
