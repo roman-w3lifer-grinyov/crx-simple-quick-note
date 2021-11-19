@@ -2,10 +2,10 @@
 
 /* global chrome */
 
-chrome.runtime.onInstalled.addListener(function () {
-  chrome.storage.sync.get('note', function (storage) {
-    if (storage.note) {
-      setBadge(storage.note);
-    }
-  });
-});
+chrome.runtime.onInstalled.addListener(onInstalledAndOnStartupListener);
+chrome.runtime.onStartup.addListener(onInstalledAndOnStartupListener);
+
+function onInstalledAndOnStartupListener()
+{
+  chrome.storage.sync.get('note', storage => storage.note && setBadge(storage.note));
+}
