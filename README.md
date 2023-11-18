@@ -1,18 +1,13 @@
-# [Simple Quick Note](https://chrome.google.com/webstore/detail/jiabjkckgapmaalmfbjdkcbkpiafnfga)
+# Simple Quick Note
 
+- [Chrome Web Store](https://chromewebstore.google.com/detail/jiabjkckgapmaalmfbjdkcbkpiafnfga)
 - [Installation for developers (for Linux users)](#installation-for-developers-for-linux-users)
 - [Sources](#sources)
-  - [Icons](#icons)
-
----
+    - [Icons](#icons)
 
 ![Simple Quick Note - Appearance](img/screenshots/1280x800/appearance.png)
 
----
-
 ![Simple Quick Note - Options](img/screenshots/1280x800/options.png)
-
----
 
 ## Installation for developers (for Linux users)
 
@@ -21,7 +16,6 @@
 3. Click on the `Load unpacked` button.
 4. Select the extension directory.
 
----
 
 ## Sources
 
