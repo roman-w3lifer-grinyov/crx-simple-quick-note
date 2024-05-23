@@ -12,3 +12,7 @@ function setBadge(note) {
     'text': note.length ? String(note.length) : ''
   });
 }
+
+chrome.runtime.onInstalled.addListener(
+  () => chrome.storage.sync.get('note', storage => storage.note && setBadge(storage.note))
+);

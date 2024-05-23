@@ -18,7 +18,7 @@
     "default_popup": "html/popup.html"
   },
   "background": {
-    "scripts": ["js/common.js", "js/events.js"]
+    "service_worker": "js/common.js"
   },
   "permissions": [
     "storage"
