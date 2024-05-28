@@ -8,7 +8,7 @@
     "48": "img/icons/action-edit/48x48.png",
     "128": "img/icons/action-edit/128x128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "img/icons/action-edit/16x16.png",
       "48": "img/icons/action-edit/48x48.png",
