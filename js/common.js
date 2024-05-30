@@ -8,7 +8,7 @@ const TEXTAREA =  {
 };
 
 function setBadge(note) {
-  chrome.browserAction.setBadgeText({
+  chrome.action.setBadgeText({
     'text': note.length ? String(note.length) : ''
   });
 }
