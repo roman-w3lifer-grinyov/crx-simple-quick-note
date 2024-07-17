@@ -1,4 +1,4 @@
-# Simple Quick Note
+# [Simple Quick Note](https://chromewebstore.google.com/detail/jiabjkckgapmaalmfbjdkcbkpiafnfga)
 
 - [Chrome Web Store](https://chromewebstore.google.com/detail/jiabjkckgapmaalmfbjdkcbkpiafnfga)
 - [Installation for developers (for Linux users)](#installation-for-developers-for-linux-users)
