@@ -14,5 +14,8 @@ function setBadge(note) {
 }
 
 chrome.runtime.onInstalled.addListener(
-  () => chrome.storage.sync.get('note', storage => storage.note && setBadge(storage.note))
+  () => chrome.storage.sync.get('note', storage => {
+    storage.note;
+    setBadge(storage.note);
+  })
 );
