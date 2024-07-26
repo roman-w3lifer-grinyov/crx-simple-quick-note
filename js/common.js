@@ -13,6 +13,8 @@ function setBadge(note) {
   });
 }
 
+chrome.storage.sync.get('note', storage => storage.note && setBadge(storage.note));
+
 chrome.runtime.onInstalled.addListener(
   () => chrome.storage.sync.get('note', storage => storage.note && setBadge(storage.note))
 );
