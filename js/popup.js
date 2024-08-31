@@ -54,13 +54,19 @@ window.addEventListener('DOMContentLoaded', function () {
 
   ext.cutButton.addEventListener('click', function () {
     copyTextToClipboard(ext.textarea.value);
-    ext.resetButton.click();
+    clearNote();
   });
 
   ext.resetButton.addEventListener('click', function () {
+    if (confirm('Your note will be deleted!')) {
+      clearNote();
+    }
+  });
+
+  function clearNote() {
     ext.textarea.value = '';
     ext.updateNote();
-  });
+  }
 
   function copyTextToClipboard(text) {
     var textarea = document.createElement('textarea');
