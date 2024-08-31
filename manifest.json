@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Simple Quick Note",
   "description": "Simple extension for quick notes with a characters' counting feature",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "icons": {
     "16": "img/icons/action-edit/16x16.png",
     "48": "img/icons/action-edit/48x48.png",
@@ -20,7 +20,9 @@
   "background": {
     "service_worker": "js/common.js"
   },
-  "options_page": "html/options.html",
+  "options_ui": {
+    "page": "html/options.html"
+  },
   "permissions": [
     "storage"
   ]
