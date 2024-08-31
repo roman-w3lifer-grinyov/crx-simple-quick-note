@@ -20,10 +20,10 @@
   "background": {
     "service_worker": "js/common.js"
   },
-  "permissions": [
-    "storage"
-  ],
   "options_ui": {
     "page": "html/options.html"
-  }
+  },
+  "permissions": [
+    "storage"
+  ]
 }
