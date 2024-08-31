@@ -6,11 +6,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var ext = {
 
-    textarea:            document.querySelector('textarea'),
-    copyButton:          document.getElementById('copy-button'),
-    cutButton:           document.getElementById('cut-button'),
-    resetButton:         document.getElementById('reset-button'),
-    outputLengthElement: document.querySelector('output'),
+    textarea: document.querySelector('textarea'),
+    copyButton: document.getElementById('copy-button'),
+    cutButton: document.getElementById('cut-button'),
+    resetButton: document.getElementById('reset-button'),
+    totalLengthOfTextElement: document.getElementById('total-length-of-text'),
+    lengthOfSelectedTextElement: document.getElementById('length-of-selected-text'),
 
     noteLength: 0,
     storage: chrome.storage.sync,
@@ -37,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     _setLength: function () {
       ext.noteLength = ext.textarea.value.length;
-      ext.outputLengthElement.textContent = ext.noteLength;
+      ext.totalLengthOfTextElement.textContent = ext.noteLength;
     },
 
   };
@@ -76,5 +77,9 @@ window.addEventListener('DOMContentLoaded', function () {
     document.execCommand('copy');
     document.body.removeChild(textarea);
   }
+
+  document.addEventListener('selectionchange', _ => {
+    ext.lengthOfSelectedTextElement.textContent = '' + document.getSelection().toString().length
+  })
 
 });
