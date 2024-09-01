@@ -5,7 +5,7 @@
 - [Sources](#sources)
     - [Icons](#icons)
 
-![Simple Quick Note - Appearance](img/screenshots/1280x800/appearance.png)
+![Simple Quick Note - Example](img/screenshots/1280x800/example.png)
 
 ![Simple Quick Note - Options](img/screenshots/1280x800/options.png)
 
