@@ -1,36 +1,20 @@
-;'use strict';
-
 /* global chrome */
 
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', _ => {
 
-  const textareaHeightElement = document.getElementById('textarea-height');
-  const textareaWidthElement = document.getElementById('textarea-width');
+  const textareaHeightElement = document.getElementById('textarea-height')
+  const textareaWidthElement = document.getElementById('textarea-width')
 
-  chrome.storage.sync.get(null, function (storage) {
-    const height = (storage.textarea && storage.textarea.height) || TEXTAREA.height;
-    const width = (storage.textarea && storage.textarea.width) || TEXTAREA.width;
-    textareaHeightElement.value = height;
-    textareaWidthElement.value = width;
-  });
+  chrome.storage.sync.get(null, storage => {
+    const height = storage.textareaHeight || app.textareaHeight
+    const width = storage.textareaWidth || app.textareaWidth
+    textareaHeightElement.value = height
+    textareaWidthElement.value = width
+  })
 
-  textareaHeightElement.addEventListener('input', saveSizeOfTextarea.bind(null, 'height', 'width'));
+  textareaHeightElement.addEventListener('input', e => chrome.storage.sync.set({textareaHeight: e.target.value}))
+  textareaWidthElement.addEventListener('input', e => chrome.storage.sync.set({textareaWidth: e.target.value}))
 
-  textareaWidthElement.addEventListener('input', saveSizeOfTextarea.bind(null, 'width', 'height'));
+  document.getElementById('close-button').addEventListener('click', _ => close())
 
-  function saveSizeOfTextarea(axis1, axis2, e) {
-    chrome.storage.sync.get('textarea', function (storage) {
-      let data = {};
-      data[axis1] = e.target.value;
-      data[axis2] = (storage.textarea && storage.textarea[axis2]) || TEXTAREA[axis2];
-      chrome.storage.sync.set({textarea: data});
-    });
-  }
-
-  document
-    .getElementById('close-button')
-    .addEventListener('click', function () {
-      window.close();
-    });
-
-});
+})
