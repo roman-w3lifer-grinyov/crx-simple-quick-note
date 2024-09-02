@@ -5,9 +5,13 @@
 - [Sources](#sources)
     - [Icons](#icons)
 
-![Simple Quick Note - Example](img/screenshots/1280x800/example.png)
+![Simple Quick Note - Example: Popup mode](img/screenshots/1280x800/example-1.png)
 
-![Simple Quick Note - Options](img/screenshots/1280x800/options.png)
+![Simple Quick Note - Options: Popup mode](img/screenshots/1280x800/options-1.png)
+
+![Simple Quick Note - Example: Side panel mode](img/screenshots/1280x800/example-2.png)
+
+![Simple Quick Note - Options: Side panel mode](img/screenshots/1280x800/options-2.png)
 
 ## Installation for developers (for Linux users)
 
