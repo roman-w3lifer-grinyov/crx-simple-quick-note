@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', _ => {
 
   })
 
-  document.addEventListener('selectionchange', _ =>
+  textarea.addEventListener('selectionchange', _ =>
     lengthOfSelectedTextElement.textContent = '' + document.getSelection().toString().length
   )
 
