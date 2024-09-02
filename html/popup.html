@@ -9,14 +9,21 @@
 </head>
 <body>
   <textarea autofocus></textarea>
-  <button id="copy-button">Copy</button>
-  <button id="cut-button">Cut</button>
-  <button id="reset-button">Reset</button>
-  <output>
-    Total number of characters: <span id="total-length-of-text"></span>
-  </output>
-  <output>
-    Number of selected characters: <span id="length-of-selected-text"></span>
-  </output>
+  <div id="control-panel-box">
+    <output>
+      Total number of characters: <span id="total-number-of-characters"></span>
+    </output>
+    <div id="button-box">
+      <button id="reset-button">Reset</button>
+      <button id="cut-button">Cut</button>
+      <button id="copy-button">Copy</button>
+    </div>
+  </div>
+  <div id="notification-box">
+    <output>
+      Number of selected characters: <span id="length-of-selected-text"></span>
+    </output>
+    <output id="notification"></output>
+  </div>
 </body>
 </html>

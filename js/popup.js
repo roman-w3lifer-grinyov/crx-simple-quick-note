@@ -6,8 +6,9 @@ window.addEventListener('DOMContentLoaded', _ => {
   const copyButton = document.getElementById('copy-button')
   const cutButton = document.getElementById('cut-button')
   const resetButton = document.getElementById('reset-button')
-  const totalLengthOfTextElement = document.getElementById('total-length-of-text')
+  const totalNumberOfCharactersElement = document.getElementById('total-number-of-characters')
   const lengthOfSelectedTextElement = document.getElementById('length-of-selected-text')
+  const notificationElement = document.getElementById('notification')
 
   chrome.storage.sync.get(storage => {
     const height = storage.textareaHeight || app.textareaHeight
@@ -17,24 +18,34 @@ window.addEventListener('DOMContentLoaded', _ => {
     if (storage.note) {
       textarea.value = storage.note
     }
-    totalLengthOfTextElement.textContent = '' + textarea.value.length
+    totalNumberOfCharactersElement.textContent = '' + textarea.value.length
     lengthOfSelectedTextElement.textContent = '0'
   })
 
   textarea.addEventListener('input', e => {
     chrome.storage.sync.set({'note': e.target.value})
-    totalLengthOfTextElement.textContent = e.target.value.length
+    totalNumberOfCharactersElement.textContent = e.target.value.length
     chrome.action.setBadgeText({'text': e.target.value ? '' + e.target.value.length : ''})
   })
 
-  copyButton.addEventListener('click', _ => copyTextToClipboard(textarea.value))
+  copyButton.addEventListener('click', _ => {
+    copyTextToClipboard(textarea.value)
+    showNotification('Done!')
+  })
 
   cutButton.addEventListener('click', _ => {
     copyTextToClipboard(textarea.value)
     clearNote()
+    showNotification('Done!')
   })
 
-  resetButton.addEventListener('click', _ => confirm('Your note will be deleted!') && clearNote())
+  resetButton.addEventListener('click', _ => {
+    if (confirm('Your note will be deleted!')) {
+      clearNote()
+      showNotification('Done!')
+    }
+
+  })
 
   document.addEventListener('selectionchange', _ =>
     lengthOfSelectedTextElement.textContent = '' + document.getSelection().toString().length
@@ -51,9 +62,15 @@ window.addEventListener('DOMContentLoaded', _ => {
 
   function clearNote() {
     textarea.value = ''
-    totalLengthOfTextElement.textContent = '0'
+    totalNumberOfCharactersElement.textContent = '0'
     chrome.action.setBadgeText({'text': ''})
     chrome.storage.sync.set({note: ''})
+  }
+
+  function showNotification(text) {
+    notificationElement.textContent = text
+    notificationElement.style.visibility = 'visible'
+    setTimeout(_ => notificationElement.style.visibility = 'hidden', 1000)
   }
 
 })

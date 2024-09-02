@@ -5,16 +5,19 @@ textarea {
   outline: 0;
 }
 
-button {
-  float: right;
-  margin: 7px 0;
+#control-panel-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }
 
-button:not(:last-child) {
-  margin-right: 2px;
+#notification-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
 }
 
-output {
-  display: block;
-  margin: 10px 0;
+#notification {
+  padding-right: 5px;
+  visibility: hidden;
 }
