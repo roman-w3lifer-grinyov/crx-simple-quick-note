@@ -7,11 +7,7 @@
 
 ![Simple Quick Note - Example: Popup mode](img/screenshots/1280x800/example-1.png)
 
-![Simple Quick Note - Options: Popup mode](img/screenshots/1280x800/options-1.png)
-
 ![Simple Quick Note - Example: Side panel mode](img/screenshots/1280x800/example-2.png)
-
-![Simple Quick Note - Options: Side panel mode](img/screenshots/1280x800/options-2.png)
 
 ## Installation for developers (for Linux users)
 
@@ -19,7 +15,6 @@
 2. Enable `Developer mode` checkbox.
 3. Click on the `Load unpacked` button.
 4. Select the extension directory.
-
 
 ## Sources
 

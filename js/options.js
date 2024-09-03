@@ -1,3 +1,4 @@
+
 /* global chrome */
 
 window.addEventListener('DOMContentLoaded', _ => {
