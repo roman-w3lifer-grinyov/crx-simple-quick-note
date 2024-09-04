@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.hidden {
+  display: none;
+}
+
+textarea {
+  min-height: 16px;
+  min-width: 338px;
+  max-height: 438px;
+  max-width: 700px;
+  outline: 0;
+  resize: none;
+}
+
+#control-panel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+#notification {
+  margin-right: -11px;
+  visibility: hidden;
+}
+
+#options-link {
+  color: #0b57d0;
+  margin-right: 1px;
+  text-decoration: 0;
+}
+
+#options-container {
+  margin-top: 10px;
+}
+
+#options-container fieldset {
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+}
+
+#options-container input[type="number"] {
+  width: 75px;
+  text-align: center;
+  outline: 0;
+}
+
+#side-panel-mode-container {
+  cursor: pointer;
+  display: block;
+  float: right;
+  margin: 10px 0;
+}
+
+#side-panel-mode {
+  vertical-align: middle;
+}

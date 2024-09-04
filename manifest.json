@@ -20,9 +20,6 @@
   "background": {
     "service_worker": "js/service-worker.js"
   },
-  "options_ui": {
-    "page": "html/options.html"
-  },
   "side_panel": {
     "default_path": "html/popup.html"
   },

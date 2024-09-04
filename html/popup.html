@@ -3,105 +3,37 @@
 <head>
   <meta charset="utf-8">
   <title>Simple Quick Note</title>
-  <style>
-    .hidden {
-      display: none;
-    }
-
-    textarea {
-      display: block;
-      min-height: 16px;
-      min-width: 338px;
-      max-height: 440px;
-      max-width: 700px;
-      outline: 0;
-      resize: none;
-    }
-
-    #control-panel-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 8px;
-    }
-
-    #notification-box {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 5px;
-    }
-
-    #notification {
-      margin-right: -11px;
-      visibility: hidden;
-    }
-
-    #options-link {
-      color: #0b57d0;
-      margin-right: 1px;
-      text-decoration: 0;
-    }
-
-    #options-container {
-      margin-top: 10px;
-    }
-
-    #options-container fieldset {
-      border: 1px solid #000;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    #options-container input[type="number"] {
-      width: 75px;
-      text-align: center;
-      outline: 0;
-    }
-
-    #side-panel-mode-container {
-      cursor: pointer;
-      display: block;
-      float: right;
-      margin: 10px 0;
-    }
-
-    #side-panel-mode {
-      vertical-align: middle;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/options.css">
+  <script src="../js/popup.js"></script>
 </head>
 <body>
-  <main>
-    <textarea autofocus></textarea>
-    <div id="control-panel-box">
-      <output>
-        Total number of characters: <span id="total-number-of-characters"></span>
-      </output>
-      <div id="button-box">
-        <button id="reset-button">Reset</button>
-        <button id="cut-button">Cut</button>
-        <button id="copy-button">Copy</button>
-      </div>
+  <textarea autofocus></textarea>
+  <div id="control-panel-container">
+    <output>
+      Total number of characters: <span id="total-number-of-characters"></span>
+    </output>
+    <div id="button-box">
+      <button id="reset-button">Reset</button>
+      <button id="cut-button">Cut</button>
+      <button id="copy-button">Copy</button>
     </div>
-    <div id="notification-box">
-      <output>
-        Number of selected characters: <span id="length-of-selected-text"></span>
-      </output>
-      <output id="notification"></output>
-      <a href="#" id="options-link">Show options</a>
-    </div>
-    <div class="hidden" id="options-container">
-      <fieldset>
-        <legend>Size of textarea</legend>
-          <label>Height <input type="number" id="textarea-height"> px</label>
-          <label>Width <input type="number" id="textarea-width"> px</label>
-      </fieldset>
-      <label id="side-panel-mode-container">
-        <input type="checkbox" id="side-panel-mode"> Side panel mode
-      </label>
-    </div>
-  </main>
-  <script src="../js/common.js"></script>
-  <script src="../js/popup.js"></script>
+  </div>
+  <div id="footer-container">
+    <output>
+      Number of selected characters: <span id="length-of-selected-text"></span>
+    </output>
+    <output id="notification"></output>
+    <a href="#" id="options-link"></a>
+  </div>
+  <div class="hidden" id="options-container">
+    <fieldset>
+      <legend>Size of textarea</legend>
+        <label>Height <input type="number" id="textarea-height"> px</label>
+        <label>Width <input type="number" id="textarea-width"> px</label>
+    </fieldset>
+    <label id="side-panel-mode-container">
+      <input type="checkbox" id="side-panel-mode"> Side panel mode
+    </label>
+  </div>
 </body>
 </html>
