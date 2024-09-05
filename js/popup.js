@@ -47,12 +47,12 @@ window.addEventListener('DOMContentLoaded', _ => {
       }
     }
 
-
     let width = app.textareaWidth
     if (storage.currentMode === 'sidePanel') {
       app.maxTextareaWidth = app.textareaWidth
       textarea.style.maxWidth = app.textareaWidth + 'px'
       textareaWidthElement.value = app.textareaWidth
+      textareaWidthElement.disabled = true
     } else {
       if (storage.textareaWidth) {
         if (storage.textareaWidth < app.minTextareaWidth) {
