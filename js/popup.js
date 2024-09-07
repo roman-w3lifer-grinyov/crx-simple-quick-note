@@ -102,7 +102,8 @@ window.addEventListener('DOMContentLoaded', _ => {
     }
   })
 
-  function copyTextToClipboard(text) {
+  function copyTextToClipboard(text)
+  {
     const textarea = document.createElement('textarea')
     textarea.value = text
     document.body.appendChild(textarea)
@@ -111,14 +112,16 @@ window.addEventListener('DOMContentLoaded', _ => {
     document.body.removeChild(textarea)
   }
 
-  function clearNote() {
+  function clearNote()
+  {
     textarea.value = ''
     totalNumberOfCharactersElement.textContent = '0'
     chrome.action.setBadgeText({'text': ''})
     chrome.storage.sync.set({note: ''})
   }
 
-  function showNotification(text) {
+  function showNotification(text)
+  {
     notificationElement.textContent = text
     notificationElement.style.visibility = 'visible'
     setTimeout(_ => notificationElement.style.visibility = 'hidden', 1000)
